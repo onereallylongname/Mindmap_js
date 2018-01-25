@@ -1,3 +1,10 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #d8d8d8;
+}
+
 /*Strip the ul of padding and list styling*/
 
 ul {
@@ -5,6 +12,7 @@ ul {
   margin: 0;
   padding: 0;
   position: absolute;
+  z-index: 3;
 }
 
 /*Create a horizontal list with spacing*/
@@ -27,6 +35,7 @@ li a {
   color: #fff;
   background: #2f3036;
   text-decoration: none;
+  z-index: 3;
 }
 
 /*Hover state for top level links*/
@@ -72,10 +81,21 @@ li ul li a {
   padding: 0 20px;
 }
 
+p {
+  color: #467bc4;
+  font-size: 34px;
+  display: inline-block;
+  margin: 0;
+  padding: 5;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
 /*Display the dropdown on hover*/
 
 ul li a:hover+.hidden, .hidden:hover {
   display: block;
+  z-index: 3;
 }
 
 /*Style 'show menu' label button and hide it by default*/
@@ -88,6 +108,7 @@ ul li a:hover+.hidden, .hidden:hover {
   text-align: center;
   padding: 10px 0;
   display: none;
+  z-index: 3;
 }
 
 /*Hide checkbox*/
@@ -106,50 +127,64 @@ input[type=text] {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: #fff;
+  font-size: 20;
   background: #d8d8d8;
   text-align: left;
   display: block;
-  min-width: 140px;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  height: 30px;
+  width: auto;
+  height: 50px;
   line-height: 50px;
 }
 
 input[type=text] :hover {
   background: #FFF;
+
 }
 
 input[type="file"] {
-  display: none;
+    display: none;
 }
 
-label {
+.custom-file-upload {
+    width: auto;
+    display: inline-block;
+    padding: inherit;
     cursor: pointer;
-    display: block;
-  }
+}
 
+#my-menu{
+  background: #d8d8d8;
+  z-index: 3;
+}
 
+#div_GameCanvas {
+  position: absolute;
+  bottom: 0;
+}
 
 
 /*Responsive Styles*/
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 800px) {
   /*Make dropdown links appear inline*/
   ul {
     position: static;
     display: none;
+    z-index: 3;
   }
   /*Create vertical spacing*/
   li {
     margin-bottom: 1px;
   }
   /*Make all menu links full width*/
-  ul li, li a {
+  ul li, li a, li input {
+    z-index: inherit;
     width: 100%;
   }
   /*Display 'show menu' link*/
   .show-menu {
+    z-index: 3;
+    height: 50px;
     display: block;
   }
 }

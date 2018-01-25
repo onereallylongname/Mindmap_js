@@ -1,5 +1,12 @@
 <html>
+
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mindmap - New Mindmap</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
   <script type="text/javascript" src="lib/p5/p5.min.js"></script>
   <!-- <script type="text/javascript" src="lib/p5/p5.dom.min.js"></script> -->
   <!-- <script type="text/javascript" src="lib/p5/p5.sound.min.js"></script> -->
@@ -20,15 +27,60 @@
   <script type="text/javascript" src="lib/display.js"></script>
   <script type="text/javascript" src="lib/main.js"></script>
 </head>
-<body>
 
-  <input type="file" id="file-input" />
-  <h3>Contents of the file:</h3>
-  <pre id="file-content"></pre>
-<!-- <script type="text/javascript">
-  pageFdocument.getElementById('file-input').addEventListener('change', readSingleFile, false);
-</script> -->
+<body id="body">
+  <div id="my-menu">
+    <label for="show-menu" class="show-menu">Show Menu</label>
+    <input type="checkbox" id="show-menu" role="button">
+    <ul id="menu">
+      <li>
+        <a href="#">File</a>
+        <ul class="hidden">
+          <li><a href="#" onclick="makeNewMap();">New (shift + n)</a></li>
+          <li>
+            <a>
+                <label class="custom-file-upload">
+                  <input type="file" name="myfile" id="file-input" , onchange="loadMap(this.files);"/>
+                  Open (shift + o)
+                </label>
+
+              </a>
+          </li>
+          <li><input id="file-name-input" type="text" name="" value="New Mindmap" onchange="updateFileName();"></li>
+          <li><a href="#" onclick="saveMap();">Save (shift + s)</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Edit</a>
+        <ul class="hidden">
+          <li><a href="#" onclick="OPTIONS.enableMode(0);">Select (s)</a></li>
+          <li><a href="#" onclick="OPTIONS.enableMode(1);">Move (m)</a></li>
+          <li><a href="#" onclick="recenter();">Recenter origin (o)</a></li>
+          <li><a href="#" onclick="clickZoom(250);">Zoom in (+)</a></li>
+          <li><a href="#" onclick="clickZoom(-250);">Zoom out (-)</a></li>
+          <li><a href="#" onclick="OPTIONS.enableMode(2);">Add node (a)</a></li>
+          <li><a href="#">Add link (l)</a></li>
+          <li><a href="#">Delete Selected (d)</a></li>
+          <li><a href="#">Illustration</a></li>
+          <li><input type="text" name="" value=""></li>
+
+        </ul>
+      </li>
+
+      <li>
+        <a href="#">Trees: </a>
+        <ul class="hidden" id="trees-select">
+          <li><a href="#">Te sdn</a></li>
+
+        </ul>
+      </li>
+      <li><p> Tree</p></li>
+    </ul>
+  </div>
+
   <div id="div_GameCanvas">
   </div>
 </body>
+
 </html>
