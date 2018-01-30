@@ -63,7 +63,6 @@
           <li><a  onclick="clickZoom(-250);">Zoom out (-)</a></li>
           <li><a  onclick="OPTIONS.enableMode(2);">Add node (a)</a></li>
           <li><a >Add link (l)</a></li>
-          <li><a onclick="deleteTarget();">Delete Selected (d)</a></li>
         </ul>
       </li>
 
@@ -79,15 +78,16 @@
           <li><a onclick="createNewTree();">New Tree </a></li>
           <li><a>Tree name:</a></li>
           <li><input type="text" id="new-tree-name" onchange="changeTreeName(this);"></li>
-          <li><a onclick="deleteTreeFromMap();">Delete Current Tree</a></li>
+          <li><a onclick="deleteTreeFromMap();">Delete (shift + d)</a></li>
 
         </ul>
       </li>
 
       <li>
         <a id="selected-object"> Selected: </a>
-        <ul class="hidden" id="trees-options">
-          <li><a onclick="alert('missing function');">Edit </a></li>
+        <ul class="hidden" id="target-options">
+          <li><a onclick="alert('missing function');">Edit (e)</a></li>
+          <li><a onclick="deleteTarget();">Delete (d)</a></li>
         </ul>
       </li>
     </ul>
