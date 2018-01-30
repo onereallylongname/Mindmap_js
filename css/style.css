@@ -93,10 +93,19 @@ p {
 
 /*Display the dropdown on hover*/
 
+.hidden {
+    max-height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 ul li a:hover+.hidden, .hidden:hover {
   display: block;
   z-index: 3;
 }
+
+
 
 /*Style 'show menu' label button and hide it by default*/
 
